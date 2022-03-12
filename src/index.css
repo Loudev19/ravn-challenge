@@ -11,3 +11,131 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html {
+  --color-neutral-1: #fff;
+  --color-neutral-2: #94979A;
+  --color-neutral-3: #393D41;
+  --color-neutral-4: #2C2F33;
+  --color-neutral-5: #222528;
+
+  /* Primary */
+  --color-primary-1: #F4CCC8;
+  --color-primary-2: #EBA59E;
+  --color-primary-3: #E27D73;
+  --color-primary-4: #DA584B;
+
+  /* Secondary */
+  --color-secondary-1: #C8E1BC;
+  --color-secondary-2: #AAD199;
+  --color-secondary-3: #8DC275;
+  --color-secondary-4: #70B252;
+
+  /* Tertiary */
+  --color-terteary-1: #F9EED7;
+  --color-terteary-2: #F2DAAB;
+  --color-terteary-3: #EBC77F;
+  --color-terteary-4: #E5B454;
+}
+
+/* Display */
+.display-xl-regular, .display-xl-bold {
+  font-size: 64px;
+  line-height: 88px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.display-l-regular, .display-l-bold {
+  font-size: 56px;
+  line-height: 72px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.display-m-regular, .display-m-bold {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.display-s-regular, .display-s-bold {
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.display-xs-regular, .display-xs-bold {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.display-xl-bold {
+  font-weight: 700;
+}
+
+.display-l-bold {
+  font-weight: 700;
+}
+
+.display-m-bold {
+  font-weight: 700;
+}
+
+.display-s-bold {
+  font-weight: 700;
+}
+
+.display-xs-bold {
+  font-weight: 700;
+}
+
+/* Body */
+
+.body-xl-regular, .body-xl-bold {
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.75px;
+  font-weight: 400;
+}
+
+.body-l-regular, .body-l-bold {
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.75px;
+  font-weight: 400;
+}
+
+.body-m-regular, .body-m-bold {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.75px;
+  font-weight: 400;
+}
+
+.body-s-regular, .body-s-bold {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  font-weight: 400;
+}
+
+.body-xl-bold {
+  font-weight: 700;
+}
+
+.body-l-bold {
+  font-weight: 700;
+}
+
+.body-m-bold {
+  font-weight: 700;
+}
+
+.body-s-bold {
+  font-weight: 700;
+}
