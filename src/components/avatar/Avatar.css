@@ -1,8 +1,16 @@
-.avatar {
+.avatar-40, .avatar-32 {
     background-image: url('http://i.stack.imgur.com/Dj7eP.jpg');
-    width: 40px;
-    height: 40px;
     background-size: cover;
     background-position: top center;
     border-radius: 50%;
+}
+
+.avatar-40 {
+    width: 40px;
+    height: 40px;
+}
+
+.avatar-32 {
+    width: 32px;
+    height: 32px;
 }

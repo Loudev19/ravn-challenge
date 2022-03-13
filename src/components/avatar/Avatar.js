@@ -1,8 +1,8 @@
 import './Avatar.css';
 
-function Avatar() {
+function Avatar(props) {
     return (
-        <div className="avatar"></div>
+        <div className={`avatar-${props.size}`}></div>
     );
 }
 
