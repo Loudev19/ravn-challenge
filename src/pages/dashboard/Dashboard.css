@@ -1,7 +1,7 @@
 .dashboard {
     width: 100%;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: var(--gutter);
+    padding-bottom: var(--gutter);
 }
 
 .task-bar {
@@ -10,14 +10,9 @@
     justify-content: space-between;
 }
 
-.overflow {
-    margin-top: 20px;
-    flex: 1;
-    display: flex;
-    overflow: auto;
-}
-
 .columns {
+    margin-top: 20px;
+    overflow-x: auto;
     display: flex;
-    column-gap: 32px;
+    column-gap: var(--gutter);
 }

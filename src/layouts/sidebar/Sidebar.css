@@ -1,9 +1,9 @@
 .sidebar {
     border-radius: 24px;
     background-color: var(--color-neutral-4);
-    width: 232px;
+    min-width: 232px;
     height: calc(100% - 64px);
-    margin: 32px;
+    margin: var(--gutter);
 }
 
 .logo {
