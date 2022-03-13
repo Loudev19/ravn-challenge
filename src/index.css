@@ -140,3 +140,10 @@ code {
 .body-s-bold {
   font-weight: 700;
 }
+
+/* Icons */
+
+.icon-24 {
+  width: 20px;
+  height: 20px;
+}
