@@ -39,7 +39,7 @@ class Header extends React.Component {
             </div>
             <div className='search-box'>
               <FaBell className='icon-24'/>
-              <Avatar />
+              <Avatar size={'40'}/>
             </div>
         </div>
       );
