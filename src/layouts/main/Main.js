@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import * as routes from '../../routes/routes';
+
 import Dashboard from '../../pages/dashboard/Dashboard';
 import MyTask from '../../pages/my-task/MyTask';
 import Header from '../header/Header';
@@ -16,8 +18,8 @@ function Main() {
                 <div className='content'>
                     <Header />
                     <Routes>
-                        <Route exact path="/" element={<Dashboard />}/>
-                        <Route exact path="/my-task" element={<MyTask />}/>
+                        <Route exact path={routes.DASHBOARD} element={<Dashboard />}/>
+                        <Route exact path={routes.MY_TASKS} element={<MyTask />}/>
                     </Routes>
                 </div>
             </div>
