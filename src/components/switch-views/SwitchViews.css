@@ -8,6 +8,10 @@
     height: 40px;
     text-decoration: none;
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
 }
 
 .switch {
