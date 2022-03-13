@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { FaBars, FaBorderAll } from 'react-icons/fa';
-
 import { NavLink } from 'react-router-dom';
+
+import { FaBars, FaBorderAll } from 'react-icons/fa';
 
 import './Sidebar.css';
 import logo from '../../assets/logo.png' 
@@ -15,10 +15,10 @@ class Sidebar extends React.Component {
             <nav>
                 <ul>
                     <li><NavLink className={({isActive}) => isActive ? "link-active body-m-bold" : "link body-m-bold"} to="/">
-                        <FaBorderAll className='icon'/>  DASHBOARD
+                        <FaBorderAll className='icon-24'/>  DASHBOARD
                     </NavLink></li>
                     <li><NavLink className={({isActive}) => isActive ? "link-active body-m-bold" : "link body-m-bold"} to="/my-task">
-                        <FaBars className='icon' />  MY TASK
+                        <FaBars className='icon-24' />  MY TASK
                     </NavLink></li>
                 </ul>
             </nav>
