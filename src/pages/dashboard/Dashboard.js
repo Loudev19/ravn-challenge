@@ -12,9 +12,11 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       columns: [
-        <TaskColumn key={'column1'} name={'Done'}/>, 
-        <TaskColumn key={'column2'} name={'To Do'}/>, 
-        <TaskColumn key={'column3'} name={'Doing'}/>
+        <TaskColumn key={'column1'} name={'Backlog'}/>, 
+        <TaskColumn key={'column2'} name={'Cancelled'}/>, 
+        <TaskColumn key={'column3'} name={'Done'}/>,
+        <TaskColumn key={'column4'} name={'In progress'}/>, 
+        <TaskColumn key={'column5'} name={'To do'}/>,
       ]
     }
   }
@@ -28,11 +30,9 @@ class Dashboard extends React.Component {
             <FaPlus />
           </button>
         </div>
-        <div className="overflow">
-          <div className="columns">
+        <div className="columns">
             {this.state.columns}
           </div>
-        </div>
       </div>
     );
   }
