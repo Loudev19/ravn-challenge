@@ -155,3 +155,12 @@ code {
   border: none;
   color: var(--color-neutral-1);
 }
+
+.colored-icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--color-primary-4);
+  color: var(--color-neutral-1);
+  border: none;
+}
