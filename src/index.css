@@ -28,6 +28,9 @@ html {
   --color-primary-4-rgb: 218, 88, 75;
   --color-secondary-4-rgb: 112, 178, 82;
   --color-terteary-4-rgb: 229, 180, 84;
+
+  /* Padding */
+  --gutter: 32px;
 }
 
 body {
