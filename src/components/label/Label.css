@@ -1,0 +1,23 @@
+.label {
+    height: 32px;
+    border-radius: 4px;
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.bg-white {
+    background-color: rgba(var(--color-neutral-1-rgb), 0.1);
+}
+
+.bg-yellow {
+    background-color: rgba(var(--color-terteary-4-rgb), 0.1);
+}
+
+.bg-red {
+    background-color: rgba(var(--color-primary-4-rgb), 0.1);
+}
+
+.bg-green {
+    background-color: rgba(var(--color-secondary-4-rgb), 0.1);
+}
