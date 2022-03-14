@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FaEllipsisH } from 'react-icons/fa';
+import { POINTS } from "../../constants/TaskValues";
 import Avatar from "../avatar/Avatar";
 
 
@@ -15,7 +16,7 @@ class TaskCard extends React.Component {
             title: this.props.title,
             points: this.props.points,
             dueDate: this.props.dueDate,
-            tags: ['ANDROID'],
+            tags: this.props.tags,
             key: this.props.key
         }
     }
@@ -30,7 +31,7 @@ class TaskCard extends React.Component {
                     </button>
                 </div>
                 <div className="spaced">
-                    <p className="body-m-bold">{this.state.points} Points</p>
+                    <p className="body-m-bold">{POINTS.get(this.state.points)} Points</p>
                     <Label canIcon={true} label={this.state.dueDate} key={1}/>
                 </div>
                 <div className="tags">
