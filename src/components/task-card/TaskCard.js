@@ -31,7 +31,7 @@ class TaskCard extends React.Component {
                     </button>
                 </div>
                 <div className="spaced">
-                    <p className="body-m-bold">{POINTS.get(this.state.points)} Points</p>
+                    <p className="body-m-bold">{POINTS[this.state.points]} Points</p>
                     <Label canIcon={true} label={this.state.dueDate} key={1}/>
                 </div>
                 <div className="tags">

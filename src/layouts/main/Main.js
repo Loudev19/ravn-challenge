@@ -12,6 +12,7 @@ import './Main.css';
 import { client, GET_TASKS } from '../../services/TasksAPI';
 import { useQuery } from '@apollo/client';
 import { FormatDate } from '../../services/FormatDate';
+import { STATUS } from '../../constants/TaskValues';
 
 function ContentMain(props) {
     return (
@@ -39,11 +40,11 @@ function Main() {
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error!</div>;
 
-    const grouped = data.tasks.reduce(function (r, a) {
-        r[a.status] = r[a.status] || [];
-        r[a.status].push({...a, dueDate: FormatDate(a.dueDate)});
-        return r;
-    }, Object.create(null));
+    const grouped = {}
+    Object.keys(STATUS).forEach(key => grouped[key] = [])
+    data.tasks.forEach(item => {
+        grouped[item.status]?.push({...item, dueDate: FormatDate(item.dueDate)})
+    });
 
     return <ContentMain columns={grouped} />
 }

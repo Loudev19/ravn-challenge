@@ -18,7 +18,7 @@ class TaskColumn extends React.Component {
     render() {
         return (
             <div className="column">
-                <span className="body-l-bold column-title">{STATUS.get(this.state.name)} ({this.state.tasks.length})</span>
+                <span className="body-l-bold column-title">{STATUS[this.state.name]} ({this.state.tasks.length})</span>
                 {this.state.tasks.map(item => 
                     <TaskCard 
                         key={item.id} 
