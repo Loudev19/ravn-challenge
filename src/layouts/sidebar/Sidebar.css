@@ -1,9 +1,14 @@
 .sidebar {
     border-radius: 24px;
     background-color: var(--color-neutral-4);
-    min-width: 232px;
+    min-width: var(--sidebar-width);
+    width: var(--sidebar-width);
     height: calc(100% - 64px);
     margin: var(--gutter);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
 
 .logo {
