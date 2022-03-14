@@ -1,0 +1,23 @@
+.dashboard {
+    width: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.task-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.overflow {
+    margin-top: 20px;
+    flex: 1;
+    display: flex;
+    overflow: auto;
+}
+
+.columns {
+    display: flex;
+    column-gap: 32px;
+}

@@ -1,0 +1,27 @@
+.card {
+    width: calc(348px - (16px * 2));
+    height: 208px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: var(--color-neutral-4);
+    color: var(--color-neutral-1);
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.spaced {
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tags {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.icon-24 {
+    color: var(--color-neutral-2);
+}

@@ -22,6 +22,12 @@ html {
   --color-terteary-2: #F2DAAB;
   --color-terteary-3: #EBC77F;
   --color-terteary-4: #E5B454;
+
+  /*rgb*/
+  --color-neutral-1-rgb: 255, 255, 255;
+  --color-primary-4-rgb: 218, 88, 75;
+  --color-secondary-4-rgb: 112, 178, 82;
+  --color-terteary-4-rgb: 229, 180, 84;
 }
 
 body {
@@ -153,5 +159,33 @@ code {
 .flat-icon-button {
   background-color: transparent;
   border: none;
+  max-width: 25px;
   color: var(--color-neutral-1);
+}
+
+.colored-icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--color-primary-4);
+  color: var(--color-neutral-1);
+  border: none;
+}
+
+/* Text colors*/
+
+.c-white {
+  color: var(--color-neutral-1);
+}
+
+.c-yellow {
+  color: var(--color-terteary-4);
+}
+
+.c-red {
+  color: var(--color-primary-4);
+}
+
+.c-green {
+  color: var(--color-secondary-4);
 }

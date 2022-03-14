@@ -1,0 +1,11 @@
+.dashboard {
+    width: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.task-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

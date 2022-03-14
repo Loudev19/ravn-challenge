@@ -1,0 +1,26 @@
+.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.switch, .switch-active {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.switch {
+    color: var(--color-neutral-1);
+}
+
+.switch-active {
+    color: var(--color-primary-4);
+    border: 1px solid var(--color-primary-4);
+    box-sizing: border-box;
+    border-radius: 8px;
+}

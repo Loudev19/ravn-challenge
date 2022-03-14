@@ -1,7 +1,6 @@
 .search-bar {
-    width: calc(100% - 96px);
+    width: calc(100% - 48px);
     height: 64px;
-    margin-top: 32px;
     border-radius: 16px;
     padding: 0px 24px;
     background-color: var(--color-neutral-4);
