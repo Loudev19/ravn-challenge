@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { NavLink } from 'react-router-dom';
-import * as routes from '../../routes/routes';
+import * as routes from '../../constants/Routes';
 
 import { FaBars, FaBorderAll } from 'react-icons/fa';
 
