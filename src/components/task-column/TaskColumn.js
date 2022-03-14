@@ -8,7 +8,7 @@ class TaskColumn extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: [<TaskCard key={new Date().getMilliseconds} title={'Prueba'} points={3} dueDate={'04-12-2021'} tags={['Android']} />],
+            tasks: this.props.tasks,
             name: this.props.name,
             key: this.props.key
         }
@@ -18,7 +18,14 @@ class TaskColumn extends React.Component {
         return (
             <div className="column">
                 <span className="body-l-bold column-title">{this.state.name} ({this.state.tasks.length})</span>
-                {this.state.tasks}
+                {this.state.tasks.map(item => 
+                    <TaskCard 
+                        key={item.id} 
+                        title={item.name} 
+                        points={item.pointEstimate} 
+                        dueDate={item.dueDate} 
+                        tags={item.tags} />
+                )}
             </div>
         );
     }

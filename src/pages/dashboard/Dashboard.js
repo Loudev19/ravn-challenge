@@ -11,13 +11,7 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [
-        <TaskColumn key={'column1'} name={'Backlog'}/>, 
-        <TaskColumn key={'column2'} name={'Cancelled'}/>, 
-        <TaskColumn key={'column3'} name={'Done'}/>,
-        <TaskColumn key={'column4'} name={'In progress'}/>, 
-        <TaskColumn key={'column5'} name={'To do'}/>,
-      ]
+      columns: props.columns
     }
   }
 
@@ -31,7 +25,8 @@ class Dashboard extends React.Component {
           </button>
         </div>
         <div className="columns">
-            {this.state.columns}
+            {Object.entries(this.state.columns).map((item, index) => 
+            <TaskColumn key={`${item[0]}${index}`} name={item[0]} tasks={item[1]}/>)}
           </div>
       </div>
     );

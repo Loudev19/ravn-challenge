@@ -33,16 +33,17 @@ function Main() {
     const { loading, error, data } = useQuery(GET_TASKS, {
         variables: { input: {} },
         client: client
-      });
-    console.log(data?.tasks, loading, error)
+    });
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error!</div>;
+
     const grouped = data.tasks.reduce(function (r, a) {
         r[a.status] = r[a.status] || [];
         r[a.status].push(a);
         return r;
     }, Object.create(null));
-    console.log(grouped)
+    
     return <ContentMain columns={grouped} />
 }
 
