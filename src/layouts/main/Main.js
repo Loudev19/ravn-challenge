@@ -11,6 +11,7 @@ import Sidebar from "../sidebar/Sidebar";
 import './Main.css';
 import { client, GET_TASKS } from '../../services/TasksAPI';
 import { useQuery } from '@apollo/client';
+import { FormatDate } from '../../services/FormatDate';
 
 function ContentMain(props) {
     return (
@@ -40,10 +41,10 @@ function Main() {
 
     const grouped = data.tasks.reduce(function (r, a) {
         r[a.status] = r[a.status] || [];
-        r[a.status].push(a);
+        r[a.status].push({...a, dueDate: FormatDate(a.dueDate)});
         return r;
     }, Object.create(null));
-    
+
     return <ContentMain columns={grouped} />
 }
 
