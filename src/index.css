@@ -32,6 +32,9 @@ html {
 
   /* Padding */
   --gutter: 32px;
+
+  /* Layout sizes */
+  --sidebar-width: 232px;
 }
 
 body {
