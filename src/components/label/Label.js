@@ -3,10 +3,13 @@ import { FaClock } from "react-icons/fa";
 import './Label.css';
 
 function getColorFromDate(date) {
-    const left = (new Date() - new Date(date)) / (1000*60*60*24)
-    if (left >= 2) return 'white';
-    if (left < 0) return 'red';
-    else return 'white';
+    if (date === 'TOMORROW' || date === 'TODAY') return 'yellow'
+    if (date === 'YESTERDAY') return 'red'
+
+    const left = Math.floor((new Date() - new Date(date)) / (1000*60*60*24))
+    if (left < -2) return 'white';
+    if (left >= -2 && left <= 0) return 'yellow';
+    else return 'red';
 }
 
 export default function Label(props) {
