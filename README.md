@@ -4,6 +4,12 @@ This is a web application made using React and Graphql as part of the Ravn inter
 
 ## Run
 
+Create .env file in the root directory with a variable called REACT_APP_API_KEY
+```sh
+//.env
+REACT_APP_API_KEY=<my-key>
+```
+
 This application requires to install the next dependencies in order to start the server.
 
 Grapghql using the library Apollo (querys, create and delete mutation)
@@ -33,6 +39,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 Files were divided by components
 
 ```sh
+.env
 src
   |components
     |task-column
