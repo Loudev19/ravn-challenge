@@ -1,7 +1,7 @@
 .dashboard {
     width: 100%;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: var(--gutter);
+    padding-bottom: var(--gutter);
 }
 
 .task-bar {

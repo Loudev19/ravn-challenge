@@ -1,8 +1,10 @@
 .column {
     width: 348px;
+    min-width: 348px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    row-gap: calc(var(--gutter) / 2);
 }
 
 .column-title {

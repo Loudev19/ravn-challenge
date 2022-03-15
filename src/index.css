@@ -25,9 +25,16 @@ html {
 
   /*rgb*/
   --color-neutral-1-rgb: 255, 255, 255;
+  --color-neutral-3-rgb: 57, 61, 65;
   --color-primary-4-rgb: 218, 88, 75;
   --color-secondary-4-rgb: 112, 178, 82;
   --color-terteary-4-rgb: 229, 180, 84;
+
+  /* Padding */
+  --gutter: 32px;
+
+  /* Layout sizes */
+  --sidebar-width: 232px;
 }
 
 body {
@@ -170,6 +177,63 @@ code {
   background-color: var(--color-primary-4);
   color: var(--color-neutral-1);
   border: none;
+}
+
+.colored-icon-button:hover {
+  opacity: 0.8;
+}
+
+.colored-text-button, .text-button {
+  height: 40px;
+  border-radius: 8px;
+  padding: 0px 8px;
+  color: var(--color-neutral-1);
+  border: none;
+}
+
+.colored-text-button {
+  background-color: var(--color-primary-4);
+}
+
+.text-button {
+  background-color: transparent;
+}
+
+.colored-text-button:disabled, .colored-icon-button:disabled {
+  background-color: var(--color-primary-2);
+}
+
+.colored-text-button:hover, .text-button:hover {
+  opacity: 0.8;
+}
+
+/* Inputs */
+
+input {
+  background-color: transparent;
+  border: none;
+  color: var(--color-neutral-1);
+}
+
+select {
+  height: 32px;
+  border-radius: 4px;
+  padding: 4px 16px;
+  background-color: rgba(var(--color-neutral-1-rgb), 0.2);
+  color: var(--color-neutral-1);
+}
+
+option:checked {
+  background-color: var(--color-neutral-4);
+}
+
+option:not(:checked) {
+  background-color: var(--color-neutral-3);
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+  caret-color: var(--color-neutral-1);
 }
 
 /* Text colors*/
