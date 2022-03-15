@@ -1,7 +1,7 @@
 export const POINTS = {
     'ZERO': 0,
-    'UNO': 1,
-    'DOS': 2,
+    'ONE': 1,
+    'TWO': 2,
     'FOUR': 4,
     'EIGHT': 8
 }
@@ -13,3 +13,11 @@ export const STATUS = {
     'DONE': 'Done',
     'CANCELLED': 'Cancelled',
 }
+
+export const TAGS = [
+    "ANDROID",
+    "IOS",
+    "NODE_JS",
+    "RAILS",
+    "REACT"
+]
