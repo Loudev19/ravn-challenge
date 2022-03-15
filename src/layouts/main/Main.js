@@ -13,6 +13,7 @@ import { client, GET_TASKS } from '../../services/TasksAPI';
 import { useQuery } from '@apollo/client';
 import { FormatDate } from '../../services/FormatDate';
 import { STATUS } from '../../constants/TaskValues';
+import Loading from '../../components/loading/Loading';
 
 function ContentMain(props) {
     return (
@@ -37,7 +38,7 @@ function Main() {
         client: client
     });
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Loading />;
     if (error) return <div>Error!</div>;
 
     const grouped = {}
