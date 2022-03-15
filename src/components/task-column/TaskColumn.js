@@ -21,6 +21,7 @@ class TaskColumn extends React.Component {
                 <span className="body-l-bold column-title">{STATUS[this.state.name]} ({this.state.tasks.length})</span>
                 {this.state.tasks.map(item => 
                     <TaskCard 
+                        id={item.id}
                         key={item.id} 
                         title={item.name} 
                         points={item.pointEstimate} 

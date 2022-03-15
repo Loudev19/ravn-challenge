@@ -1,11 +1,11 @@
 import React from "react";
 
-import { FaEllipsisH } from 'react-icons/fa';
 import { POINTS } from "../../constants/TaskValues";
 import Avatar from "../avatar/Avatar";
 
 
 import Label from "../label/Label";
+import MenuCard from "../menu/MenuCard";
 import './TaskCard.css';
 
 class TaskCard extends React.Component {
@@ -17,7 +17,8 @@ class TaskCard extends React.Component {
             points: this.props.points,
             dueDate: this.props.dueDate,
             tags: this.props.tags,
-            key: this.props.key
+            key: this.props.key,
+            id: this.props.id
         }
     }
 
@@ -26,9 +27,7 @@ class TaskCard extends React.Component {
             <div className="card">
                 <div className="spaced">
                     <p className="body-l-bold">{this.state.title}</p>
-                    <button className="flat-icon-button">
-                        <FaEllipsisH className="icon-24" />
-                    </button>
+                    <MenuCard id={this.state.id}/>
                 </div>
                 <div className="spaced">
                     <p className="body-m-bold">{POINTS[this.state.points]} Points</p>
