@@ -79,7 +79,7 @@ function CreateForm(props) {
                                 assigneeId: event.target.value
                             })}/>
                         <select
-                            className="body-m-regular"
+                            className="body-m-regular tags"
                             multiple={true}
                             value={formState.tags} 
                             onChange={(event) => setFormState({
@@ -87,7 +87,7 @@ function CreateForm(props) {
                                 tags: Array.from(event.target.selectedOptions, option => option.value)
                             })}>
                             {TAGS.map(item => 
-                                <option key={item} value={item}>{item}</option>
+                                <option className="tag-option" key={item} value={item}>{item}</option>
                             )}
                         </select>
                         <input className='body-m-regular icon-text-button' 
