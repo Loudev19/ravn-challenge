@@ -1,0 +1,8 @@
+.empty-box {
+    width: 100%;
+    color: var(--color-neutral-2);
+    background-color: var(--color-neutral-4);
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+}
