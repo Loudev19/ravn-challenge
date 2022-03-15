@@ -1,0 +1,9 @@
+ul {
+    background-color: var(--color-neutral-3);
+    color: var(--color-neutral-1);
+}
+
+.MuiPaper-rounded {
+    border-radius: 8px !important;
+    background-color: transparent !important;
+}
