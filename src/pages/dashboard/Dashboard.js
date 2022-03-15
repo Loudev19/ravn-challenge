@@ -22,8 +22,16 @@ class Dashboard extends React.Component {
     this.setState({ isOpen: true });
   };
 
-  handleHideModal() {
-    this.setState({ isOpen: false });
+  handleHideModal(task) {
+    if (task) {
+      const tempColumns = this.state.columns
+      tempColumns[task.status].push({...task, id: new Date().getMilliseconds()})
+      this.setState({
+        columns: tempColumns,
+        isOpen: false
+      })
+    }
+    else this.setState({ isOpen: false });
   };
 
   render() {
@@ -36,7 +44,7 @@ class Dashboard extends React.Component {
           </button>
           <CreateForm 
             isOpen={this.state.isOpen} 
-            handleClose={() => this.handleHideModal()}>
+            handleClose={(task) => this.handleHideModal(task)}>
           </CreateForm>
         </div>
         <div className="columns">

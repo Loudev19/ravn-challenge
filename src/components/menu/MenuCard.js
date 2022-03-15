@@ -43,6 +43,7 @@ export default function MenuCard(props) {
 
     const handleDelete = () => {
         deleteTask()
+        props.onChange(props.id)
         setDeleteForm({
             isOpenConfirmationDelete: false
         });

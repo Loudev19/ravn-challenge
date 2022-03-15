@@ -27,7 +27,9 @@ class TaskCard extends React.Component {
             <div className="card">
                 <div className="spaced">
                     <p className="body-l-bold">{this.state.title}</p>
-                    <MenuCard id={this.state.id}/>
+                    <MenuCard id={this.state.id} 
+                    onChange={(task) => this.props.onChange(task)} 
+                    />
                 </div>
                 <div className="spaced">
                     <p className="body-m-bold">{POINTS[this.state.points]} Points</p>

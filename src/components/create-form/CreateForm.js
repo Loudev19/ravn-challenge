@@ -47,9 +47,16 @@ function CreateForm(props) {
     return (
         <div className={showHideClassName}>
             <form className="modal-main" onSubmit={(event) => {
-                event.preventDefault()
                 createTask();
-                props.handleClose()
+                props.handleClose({
+                    assigneeId: formState.assigneeId,
+                    dueDate: formState.dueDate, 
+                    name: formState.name, 
+                    pointEstimate: formState.pointEstimate, 
+                    status: formState.status, 
+                    tags: formState.tags
+                })
+                event.preventDefault()
             }}>
                 <input className='body-xl-bold' 
                         type="text" 

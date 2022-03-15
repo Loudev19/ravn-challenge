@@ -16,6 +16,13 @@ class TaskColumn extends React.Component {
         }
     }
 
+    handleTaskChange(task) {
+        const tempTasks = this.state.tasks.filter(item => item.id !== task)
+        this.setState({
+            tasks: tempTasks
+        })
+    }
+
     render() {
         return (
             <div className="column">
@@ -27,7 +34,9 @@ class TaskColumn extends React.Component {
                         title={item.name} 
                         points={item.pointEstimate} 
                         dueDate={item.dueDate} 
-                        tags={item.tags} />
+                        tags={item.tags} 
+                        status={item.status}
+                        onChange={(task, isCreate) => this.handleTaskChange(task, isCreate)}/>
                 )}
                 {
                     (!this.state.tasks.length || this.state.tasks.length === 0) &&
