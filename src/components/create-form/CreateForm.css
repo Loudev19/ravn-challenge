@@ -18,6 +18,9 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
   
 .display-block {
@@ -37,7 +40,16 @@
 .icon-text-button {
     height: 32px;
     border-radius: 4px;
-    padding: 4px 16px;
     background-color: rgba(var(--color-neutral-1-rgb), 0.2);
     color: var(--color-neutral-1);
+}
+
+.max-width {
+    max-width: 104px;
+}
+
+.selectors {
+    display: grid;
+    grid-template-columns: calc(15% - 16px) calc(30% - 16px) calc(25% - 16px) calc(30%);
+    column-gap: 16px;
 }

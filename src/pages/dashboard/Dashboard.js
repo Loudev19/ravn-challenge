@@ -19,12 +19,10 @@ class Dashboard extends React.Component {
   }
 
   handleOpenModal() {
-    console.log('hello')
     this.setState({ isOpen: true });
   };
 
-  handleHideModal(createObject) {
-    console.log(createObject)
+  handleHideModal() {
     this.setState({ isOpen: false });
   };
 
@@ -38,8 +36,7 @@ class Dashboard extends React.Component {
           </button>
           <CreateForm 
             isOpen={this.state.isOpen} 
-            handleClose={(event, createObject) => this.handleHideModal(event, createObject)}
-            handleCreate={(event, createObject) => this.handleHideModal(event, createObject)}>
+            handleClose={() => this.handleHideModal()}>
           </CreateForm>
         </div>
         <div className="columns">

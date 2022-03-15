@@ -1,68 +1,119 @@
-import React from "react";
-import { POINTS } from "../../constants/TaskValues";
+import React, { useState } from "react";
+import { POINTS, TAGS } from "../../constants/TaskValues";
+import { CreateTask, GetUsers } from "../../services/TasksAPI";
+import Loading from "../loading/Loading";
 
 import './CreateForm.css'
 
-class CreateForm extends React.Component {
+function SelectUser(props) {
+    const { loading, error, data } = GetUsers()
+        if (loading) return <Loading />;
+        if (error) return (<div>{error}</div>);
+        if (data) return (
+            <select
+                className="body-m-regular"
+                value={props.assigneeId} 
+                onChange={props.onChange}>
+                {data.users.map(item => 
+                    <option key={item.id} value={item.id}>{item.fullName}</option>
+                )}
+            </select>
+        );
+}
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            assigneeId: '',
-            dueDate: new Date(), 
-            name: 'Title', 
-            pointStimate: 'ZERO', 
-            status: 'BACKLOG', 
-            tags: ['ANDROID']
-        }
-    }
+function CreateForm(props) {
+    const [formState, setFormState] = useState({
+        assigneeId: '',
+        dueDate: '', 
+        name: '', 
+        pointEstimate: '', 
+        status: 'BACKLOG', 
+        tags: []
+    });
 
-    handleChange(event, prop) {
-        this.setState({
-            [prop]: event.target.value
-        })
-    }
+    const [createTask] = CreateTask({
+        assigneeId: formState.assigneeId,
+        dueDate: formState.dueDate, 
+        name: formState.name, 
+        pointEstimate: formState.pointEstimate, 
+        status: formState.status, 
+        tags: formState.tags
+    })
 
-    render() {
-        const showHideClassName = this.props.isOpen ? 
+    const showHideClassName = props.isOpen ? 
             "modal display-block" : 
             "modal display-none";
-        return (
-            <div className={showHideClassName}>
-                <section className="modal-main">
-                    <div className="modal-content">
-                        <input className='body-xl-bold' 
-                            type="text" 
-                            value={this.state.name} 
-                            onChange={(event) => this.handleChange(event, 'name')} 
-                            placeholder="Task title"/>
-                        <div className="selectors">
-                            <select
-                                value={this.state.pointStimate} 
-                                onChange={(event) => this.handleChange(event, 'pointStimate')}>
-                                {Object.entries(POINTS).map(item => 
-                                    <option key={item[0]} value={item[0]}>{item[1]}</option>
-                                )}
-                            </select>
-                            
-                        </div>
+
+    return (
+        <div className={showHideClassName}>
+            <form className="modal-main" onSubmit={(event) => {
+                event.preventDefault()
+                createTask();
+                props.handleClose()
+            }}>
+                <input className='body-xl-bold' 
+                        type="text" 
+                        value={formState.name} 
+                        onChange={(event) => setFormState({
+                            ...formState,
+                            name: event.target.value
+                        })} 
+                        placeholder="Task title"/>
+                <div className="modal-content">
+                    <div className="selectors">
+                        <select
+                            className="body-m-regular"
+                            value={formState.pointEstimate} 
+                            onChange={(event) => setFormState({
+                                ...formState,
+                                pointEstimate: event.target.value
+                            })}>
+                            {Object.entries(POINTS).map(item => 
+                                <option key={item[0]} value={item[0]}>{item[1]}</option>
+                            )}
+                        </select>
+                        <SelectUser 
+                            value={formState.assigneeId} 
+                            onChange={(event) => setFormState({
+                                ...formState,
+                                assigneeId: event.target.value
+                            })}/>
+                        <select
+                            className="body-m-regular"
+                            multiple={true}
+                            value={formState.tags} 
+                            onChange={(event) => setFormState({
+                                ...formState,
+                                tags: Array.from(event.target.selectedOptions, option => option.value)
+                            })}>
+                            {TAGS.map(item => 
+                                <option key={item} value={item}>{item}</option>
+                            )}
+                        </select>
+                        <input className='body-m-regular icon-text-button' 
+                            type="date"
+                            value={formState.dueDate}
+                            onChange={(event) => setFormState({
+                                ...formState,
+                                dueDate: event.target.value
+                            })}>
+                        </input>
                     </div>
-                    <div className="action-box">
-                        <button className="text-button" 
-                            type="button" 
-                            onClick={() => this.props.handleClose(this.state.create)}>
-                            Cancel
-                        </button>
-                        <button className="colored-text-button" 
-                            type="button" 
-                            onClick={() => this.props.handleCreate(this.state.create)}>
-                            Create
-                        </button>
-                    </div>
-                </section>
-            </div>
-        );
-    }
+                </div>
+                <div className="action-box">
+                    <button className="text-button" 
+                        type="button" 
+                        onClick={() => props.handleClose()}>
+                        Cancel
+                    </button>
+                    <button className="colored-text-button" 
+                        type="submit" >
+                        Create
+                    </button>
+                </div>
+            </form>
+        </div>
+    );
 }
 
 export default CreateForm
