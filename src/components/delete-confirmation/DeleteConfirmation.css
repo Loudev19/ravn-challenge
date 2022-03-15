@@ -1,0 +1,13 @@
+.MuiPaper-root {
+    background-color: var(--color-neutral-4) !important;
+    color: var(--color-neutral-1) !important;
+}
+
+.MuiDialogContentText-root {
+    color: var(--color-neutral-1) !important;
+    opacity: 0.5;
+}
+
+.css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
+    background-color: transparent !important;
+}
