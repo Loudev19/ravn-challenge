@@ -1,8 +1,10 @@
 import {
     ApolloClient,
-    gql
+    gql,
+    useMutation,
+    useQuery,
+    InMemoryCache
 } from '@apollo/client';
-import { InMemoryCache } from "apollo-cache-inmemory";
 
 export const client = new ApolloClient({
     cache: new InMemoryCache(),
@@ -27,3 +29,41 @@ export const GET_TASKS = gql`
         }
     }
 `;
+
+const CREATE_TASK = gql`
+    mutation createTask($input: CreateTaskInput!) {
+        createTask(input: $input) {
+            name
+            tags
+            status
+            pointEstimate
+            dueDate
+            assignee {
+                avatar
+            }
+        }
+    }
+`;
+
+const GET_USERS = gql`
+    query Users {
+        users {
+            id,
+            fullName,
+            avatar
+        }
+    }
+`;
+
+export function GetUsers() {
+    return useQuery(GET_USERS, {
+        client: client
+    });
+}
+
+export function CreateTask(createTaskBody) {
+    return useMutation(CREATE_TASK, {
+        variables: { input: createTaskBody },
+        client: client
+    })
+}
