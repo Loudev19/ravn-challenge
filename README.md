@@ -58,4 +58,5 @@ New Task
 ![image](https://user-images.githubusercontent.com/21376137/158317286-fe7a6f49-bcc1-47ba-a01a-dc7d03e3526f.png)
 
 Delete Task
+
 ![image](https://user-images.githubusercontent.com/21376137/158317343-51d86723-befc-430e-862d-30b4478b839d.png)
