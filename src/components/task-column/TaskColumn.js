@@ -1,5 +1,6 @@
 import React from "react";
 import { STATUS } from "../../constants/TaskValues";
+import EmptyMessage from "../empty-message/EmptyMessage";
 import TaskCard from "../task-card/TaskCard";
 
 import './TaskColumn.css';
@@ -28,6 +29,10 @@ class TaskColumn extends React.Component {
                         dueDate={item.dueDate} 
                         tags={item.tags} />
                 )}
+                {
+                    (!this.state.tasks.length || this.state.tasks.length === 0) &&
+                    <EmptyMessage /> 
+                }
             </div>
         );
     }
