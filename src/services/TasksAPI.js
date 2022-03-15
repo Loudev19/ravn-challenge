@@ -45,6 +45,14 @@ const CREATE_TASK = gql`
     }
 `;
 
+const DELETE_TASK = gql`
+    mutation deleteTask($input: DeleteTaskInput!){
+        deleteTask(input: $input) {
+            id
+        }
+    }
+`;
+
 const GET_USERS = gql`
     query Users {
         users {
@@ -64,6 +72,13 @@ export function GetUsers() {
 export function CreateTask(createTaskBody) {
     return useMutation(CREATE_TASK, {
         variables: { input: createTaskBody },
+        client: client
+    })
+}
+
+export function DeleteTask(deleteTaskBody) {
+    return useMutation(DELETE_TASK, {
+        variables: { input: deleteTaskBody },
         client: client
     })
 }
